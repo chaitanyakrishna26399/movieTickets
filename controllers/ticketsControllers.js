@@ -41,6 +41,19 @@ class TicketsController {
       next(error);
     }
   }
+  static async totalProfit (req,res,next){
+    try{
+      var data=await Ticket.total_profit(req.body)
+      if (data) {
+        res.status(200).json({ data: data });
+      }else{
+        res.status(404).json({ error: 'not found' });
+      }
+
+    }catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = TicketsController;

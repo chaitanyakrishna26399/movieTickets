@@ -14,4 +14,7 @@ router.get('/byid',jwt.verifyToken, TicketsController.getTicket);
 // Delete a ticket
 router.delete('/byid',jwt.verifyToken, TicketsController.deleteTicket);
 
+//Total profit
+router.get('/total_profit',jwt.verifyToken,TicketsController.totalProfit)
+
 module.exports = router;
